@@ -1,3 +1,5 @@
+module Polynomial where 
+
 data Polynomial = Polynomial Int Int | Addition Polynomial Polynomial | Multiplication Polynomial Polynomial
 
 instance Show (Polynomial) where
