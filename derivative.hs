@@ -1,6 +1,7 @@
-data Polynomial = Polynomial Int Int
+data Polynomial = Polynomial Int Int | Addition Polynomial Polynomial
 
 instance Show (Polynomial) where
+    show (Addition x y) = show x ++ " + " ++ (show y)
     show (Polynomial 1 y) = "x" ++ (superscript (show y))
     show (Polynomial x 0) = show x
     show (Polynomial x y) = (show x) ++ "x" ++ (superscript (show y))
