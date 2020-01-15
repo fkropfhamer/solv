@@ -1,9 +1,21 @@
-sumInt :: Int -> Int -> Int
-sumInt x 0 = x
-sumInt 0 x = x
-sumInt x y = x + y
-
-
 sumList :: [Int] -> Int
 sumList [] = 0
 sumList (x:xs) = x + (sumList xs)
+
+mySum :: [Int] -> Int
+mySum x = myReduce x 0 add
+
+myReduce :: [a] -> b -> (a -> b -> b) -> b
+myReduce [] y f = y 
+myReduce (x:xs) y f = myReduce xs (f x y) f
+
+add :: Int -> Int -> Int
+add x y = x + y
+
+myMap :: [a] -> (a -> b) -> [b]
+myMap [] f = []
+myMap (x: xs) f = (f x) : (myMap xs f)
+
+myFilter :: [a] -> (a -> Bool) -> [a]
+myFilter [] f = []
+myFilter (x: xs) f = if f x then myFilter xs f else x : (myFilter xs f)
