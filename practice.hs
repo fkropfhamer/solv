@@ -19,3 +19,11 @@ myMap (x: xs) f = (f x) : (myMap xs f)
 myFilter :: [a] -> (a -> Bool) -> [a]
 myFilter [] f = []
 myFilter (x: xs) f = if f x then myFilter xs f else x : (myFilter xs f)
+
+dot :: Num a => [a] -> [a] -> a
+dot [] [] = 0
+dot (x:xs) (y:ys) = x * y + dot xs ys
+
+sigmoid :: Floating a => a -> a
+sigmoid x = 1.0 / 1.0 + (exp (negate x))
+
