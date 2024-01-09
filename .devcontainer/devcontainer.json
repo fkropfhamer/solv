@@ -1,0 +1,23 @@
+{
+    "name": "solv-dev",
+    "image": "haskell:9.8-buster",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "haskell.haskell",
+          "eriksik2.vscode-ghci",
+          "jcanero.hoogle-vscode"
+        ],
+        "settings": {
+          "files.exclude": {
+            "**/*.olean": true,
+            "**/.DS_Store": true,
+            "**/.git": true,
+            "**/.hg": true,
+            "**/.svn": true,
+            "**/CVS": true
+          }
+        }
+      }
+    }
+  }
