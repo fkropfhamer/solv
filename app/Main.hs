@@ -7,5 +7,5 @@ main :: IO ()
 main = do 
     args <- getArgs
     mapM putStrLn args
-    Parser.Util.printHello
-    putStrLn $ Parser.parse "A"
+    -- Parser.Util.printHello
+    -- putStrLn $ Parser.parse "A"

@@ -1,13 +1,11 @@
 module Main where
-import BasicSum
+
+import ParserTest
+import InterpreterTest
 import Test.HUnit
 import qualified System.Exit as Exit
- 
-test1 :: Test
-test1 = TestCase (assertEqual "should return 3" 3 (basicSum 1 2))
- 
-tests :: Test
-tests = TestList [TestLabel "test1" test1]
+
+tests = TestList $  interpreterTests ++ parserTests
  
 main :: IO ()
 main = do
