@@ -21,6 +21,12 @@ maintainer:         fabian.kropfhamer@gmail.com
 -- category:
 extra-source-files: CHANGELOG.md
 
+library solv-lib
+    exposed-modules: BasicSum
+    build-depends:    base ^>=4.19
+    hs-source-dirs:   lib
+    default-language: Haskell2010
+
 executable solv
     main-is:          Main.hs
 
@@ -31,6 +37,13 @@ executable solv
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base ^>=4.19.0.0
+    build-depends:    base ^>=4.19
     hs-source-dirs:   app
+    default-language: Haskell2010
+
+test-suite tests
+    type: exitcode-stdio-1.0
+    main-is: BasicSumTest.hs
+    build-depends: base ^>=4.19, HUnit ^>=1.6, solv-lib
+    hs-source-dirs: tests
     default-language: Haskell2010
